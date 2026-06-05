@@ -1,0 +1,12 @@
+.health-bar-div {
+    width: 100px;
+    height:10px;
+    background: #5f5e5e33;
+    border: 1px solid #111111ff;
+    border-radius: 5px;
+}
+
+.health-bar {
+    height: 100%;
+    background-color: red;
+}
