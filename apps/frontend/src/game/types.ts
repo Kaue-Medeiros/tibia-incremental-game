@@ -11,3 +11,4 @@ export interface GameState {
 export type GameAction = 
     | { type: 'MONSTERS_LOADED'; definitions: MonsterDefinition[] }
     | { type: 'ATTACK' }
+    | { type: 'BUY_UPGRADE'; price: number}

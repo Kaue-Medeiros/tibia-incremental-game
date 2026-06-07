@@ -3,14 +3,15 @@ import { getRandomMonster } from './monsters'
 
 export function gameReducer(state:GameState, action:GameAction):GameState {
     switch(action.type){
-        case 'MONSTERS_LOADED':
+        case 'MONSTERS_LOADED': {
             return {
                 ...state,
                 definitions: action.definitions,
                 currentMonster: getRandomMonster(action.definitions),
                 loading: false
             }
-            
+        }
+
         case 'ATTACK': {
             if(!state.currentMonster) return state
 
@@ -28,6 +29,16 @@ export function gameReducer(state:GameState, action:GameAction):GameState {
                 ...state,
                 currentMonster: { ...state.currentMonster, health: newHealth }
             }
+        }
+
+        case 'BUY_UPGRADE': {
+            if(state.goldBalance >= action.price) {
+                return {
+                    ...state,
+                    goldBalance: state.goldBalance - action.price
+                }
+            }
+            return state
         }
 
         default:
