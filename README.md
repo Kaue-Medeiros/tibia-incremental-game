@@ -16,6 +16,7 @@ Monorepo do meu projeto Tibia Clicker Idle, que contém toda a stack do jogo cli
 
 ## Pre Requisitos
 Node 22+ e npm
+<br>
 Docker + Docker Compose
 
 ## Setup
@@ -45,15 +46,18 @@ Suba o Postgres e prepare o Schema + Dados:
 ```bash
     docker compose up -d db
     npm exec -w backend -- prisma generate deploy
-    npm run -w backend seed
+    npx -w backend prisma db seed
 ```
 
 ### 2. Rodar em modo desenvolvimento
-Em dois terminais, com hot reload:
+Em dois terminais, com hot reload:<br>
+```bash
 npm run -w backend dev          # API: http://localhost:3333
 npx nx serve frontend           # Jogo: http://localhost:5173
+```
 
 
 ### 3. Rodar tudo no Docker
-Sube a db + backend + frontend de uma vez:
-docker compose up --build           # Jogo: http://localhost:4173
+Sobe a db + backend + frontend de uma vez:<br>
+```bash 
+docker compose up --build```          # Jogo: http://localhost:4173
