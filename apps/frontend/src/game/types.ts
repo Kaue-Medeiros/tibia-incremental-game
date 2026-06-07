@@ -1,8 +1,13 @@
-import type { Monster } from '@tibia/shared'
+import type { Monster, MonsterDefinition } from '@tibia/shared'
 
 export interface GameState {
     goldBalance: number;
     clickDamage: number;
-    currentMonster: Monster;
-
+    currentMonster: Monster | null;
+    definitions: MonsterDefinition[];
+    loading: boolean;
 }
+
+export type GameAction = 
+    | { type: 'MONSTERS_LOADED'; definitions: MonsterDefinition[] }
+    | { type: 'ATTACK' }
