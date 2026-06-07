@@ -1,0 +1,13 @@
+{
+  "name": "@tibia/source",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "devDependencies": {
+    "@nx/vite": "22.7.5",
+    "nx": "22.7.5"
+  }
+}
