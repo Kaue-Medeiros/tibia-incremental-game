@@ -23,7 +23,7 @@ Docker + Docker Compose
 
 1. Clone o repositório e entre na pasta:
     ```bash
-        git clone https://github.com/Kaue-Medeiros/tibia-incremental-game>
+        git clone https://github.com/Kaue-Medeiros/tibia-incremental-game
         cd tibia-incremental-game
     ```
 
