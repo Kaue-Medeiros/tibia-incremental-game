@@ -45,7 +45,8 @@ Docker + Docker Compose
 Suba o Postgres e prepare o Schema + Dados:
 ```bash
     docker compose up -d db
-    npm exec -w backend -- prisma generate deploy
+    npm exec -w backend -- prisma generate
+    npm exec -w backend -- prisma migrate deploy
     npx -w backend prisma db seed
 ```
 
